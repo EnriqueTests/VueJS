@@ -1,0 +1,16 @@
+{
+    "name": "VueJS",
+    "version": "1.0.0",
+    "keywords": [
+        "util",
+        "functional",
+        "server",
+        "client",
+        "browser"
+    ],
+    "author": "carrillo",
+    "contributors": [],
+    "dependencies": {
+        "vue": "^2.6.12"
+    }
+}
