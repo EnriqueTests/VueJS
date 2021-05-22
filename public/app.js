@@ -1,4 +1,8 @@
 /**
+ * INDEX.HTML
+ */
+
+/**
  * El elemento input tiene una directiva v-model que nos va a permitir ir 
  * obteniendo el valor del input e ir incluyéndolo en la variable titleGame.
  * 
@@ -17,11 +21,13 @@ Vue.component('game-add', {
             <button @click="emitNewGame">Añadir</button>
         </div>
     `,
+
     data: function () {
         return {
             titleGame: null
         }
     },
+
     methods: {
         emitNewGame: function () {
             if (this.titleGame) {
@@ -39,6 +45,7 @@ Vue.component('game-add', {
  */
 Vue.component('game-list', {
     props: ['games'],
+
     template: `
         <ol>
             <game-item v-for="item in games" :game="item" :key="item.id"></game-item>
@@ -54,6 +61,7 @@ Vue.component('game-list', {
  */
 Vue.component('game-item', {
     props: ['game'],
+
     template: '<li>{{ game.title }}</li>'
 });
 
@@ -69,6 +77,7 @@ Vue.component('game-header', {
  */
 const app = new Vue({
     el: '#app',
+
     /**
      * Plantilla de mi aplicacion
      * Tiene que comenzar con div
@@ -83,6 +92,7 @@ const app = new Vue({
             <game-list v-bind:games="games"></game-list>
         </div>
     `,
+
     /**
      * Datos de games ligados a game-list en template
      */
@@ -93,6 +103,7 @@ const app = new Vue({
             { title: 'League of Legend' }
         ]
     },
+    
     /**
      * Agrega un game por medio de game-add en template
      */
