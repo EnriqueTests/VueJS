@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Example classes</title>
+        <link rel="stylesheet" href="clases_estilos.css">
+    </head>
+
+    <body>
+        <div id="app">
+            <div class="actions-container">
+                <button @click="fight">Luchar</button>
+            </div>
+
+            <!-- Casilla del jugador 1 -->
+            <!--La clase winner se activara cuando tengamos un ganador de la partida.-->
+            <div :class="['box', { winner: player1.winner }]">
+                <!--Nos va a permitir es pintar los colores del pokemon elegido. 
+                    Ese modelo variara dependiendo de lo seleccionado en el elemento select.-->
+                <select v-model="player1.pokemon" @change="resetWinner">
+                    <option v-for="pokemon in pokemons" v-bind:value="pokemon">{{ pokemon.name }}</option>
+                </select>
+
+                <pokemon :class="player1.pokemon.name"></pokemon>
+            </div>
+
+            <label>VS</label>
+
+            <!-- Casilla del jugador 2 -->
+            <div :class="['box', { winner: player2.winner }]">
+                <pokemon :class="player2.pokemon.name"></pokemon>
+
+                <select v-model="player2.pokemon" @change="resetWinner">
+                    <option v-for="pokemon in pokemons" v-bind:value="pokemon">{{ pokemon.name }}</option>
+                </select>
+            </div>
+        </div>
+
+        <script src="../node_modules/vue/dist/vue.js"></script>
+        <script src="clases_estilos.js"></script>
+    </body>
+</html>

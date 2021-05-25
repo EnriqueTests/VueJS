@@ -1,0 +1,22 @@
+/*
+    Estilos para los pokemon
+*/
+
+.box { display: inline-block; padding: 1rem; margin: 1rem; }
+.box.winner { background: green; }
+
+.pokemon { width: 3rem; display: inline-block; margin: 1rem; }
+.pokemon-head, .pokemon-body { height: 3rem; }
+.pokemon-feet { height: 1rem; }
+
+.pokemon.bulvasaur .pokemon-head { background: #ff6a62; }
+.pokemon.bulvasaur .pokemon-body { background: #62d5b4; }
+.pokemon.bulvasaur .pokemon-feet { background: #317373; }
+
+.pokemon.squirtle .pokemon-head,
+.pokemon.squirtle .pokemon-feet { background: #8bc5cd; }
+.pokemon.squirtle .pokemon-body { background: #ffe69c; }
+
+.pokemon.charmander { background: #de5239; }
+
+.pokemon.pikachu { background: #f6e652; }
