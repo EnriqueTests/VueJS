@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Example components</title>
+        <link rel="stylesheet" href="creando_componentes.css">
+    </head>
+    <body>
+        <div id="app">
+            <marketplace>
+                <!--Hemos registrado un evento de tipo @add que ejecutara la funcion addToCart cada vez que el componente emita un evento add-->
+                <!--Dependiendo del valor de course.type se mostrara el tipo de curso-->
+                <component
+                    v-for="course in courses"
+                    :is="course.type"
+                    :key="course.id"
+                    :title="course.title"
+                    :subtitle="course.subtitle"
+                    :description="course.description"
+                    @add="addToCart">
+                </component>
+            </marketplace>
+            <ul class="cart">
+                <li v-for="course in cart">{{ course.title }} - {{ course.months }} meses</li>
+            </ul>
+        </div>
+        <script src="../node_modules/vue/dist/vue.js"></script>
+        <script src="creando_componentes.js"></script>
+    </body>
+</html>
